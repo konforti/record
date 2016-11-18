@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+-->
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="WebRTC code samples">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+  <meta itemprop="description" content="Client-side WebRTC code samples">
+  <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png">
+  <meta itemprop="name" content="WebRTC code samples">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta id="theme-color" name="theme-color" content="#ffffff">
+
+  <base target="_blank">
+
+  <title>MediaStream Recording</title>
+
+
+  <style>
+    body {
+      background: white;
+      display: -webkit-flex;
+      -webkit-justify-content: center;
+      -webkit-align-items: center;
+      -webkit-flex-direction: column;
+    }
+    #screen, #capture {
+      width: 480px;
+      height: 360px;
+      background: rgba(0,0,0,0.25);
+    }
+    button {
+      display: inline-block;
+      background: -webkit-linear-gradient(#F9F9F9 40%, #E3E3E3 70%);
+      background: linear-gradient(#F9F9F9 40%, #E3E3E3 70%);
+      border: 1px solid #999;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      padding: 5px 8px;
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      user-select: none;
+      cursor: pointer;
+      text-shadow: 1px 1px #fff;
+      font-weight: 700;
+      font-size: 10pt;
+    }
+    button:hover,
+    button.active {
+      border-color: black;
+    }
+    button:active,
+    button.active {
+      background: -webkit-linear-gradient(#E3E3E3 40%, #F9F9F9 70%);
+      background: linear-gradient(#E3E3E3 40%, #F9F9F9 70%);
+    }
+
+    #screen, #capture {
+      border: 1px solid #e2e2e2;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div id="container">
+
+  <video id="capture" autoplay muted></video>
+  <video id="screen" autoplay></video>
+
+</div>
+<div>
+    <button id="record">Start Recording</button>
+    <button id="download" disabled>Download</button>
+
+    <select id="picture" class="image-picker show-html">
+    </select>
+</div>
+
+<!-- include adapter for srcObject shim -->
+<script src="src/camera.js"></script>
+<script src="src/screen.js"></script>
+<script src="src/record.js"></script>
+
+</body>
+</html>

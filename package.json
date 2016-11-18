@@ -1,0 +1,9 @@
+{
+  "name": "record",
+  "version": "1.0.0",
+  "description": "Record",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+}
